@@ -1,5 +1,8 @@
 #! /bin/bash
 
-echo "$@"
 
-echo "$0"
+echo "$PWD"
+echo "$USER"
+echo "$HOME"
+echo "$SHELL"    
+echo "$BASH_VERSION"
