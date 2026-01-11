@@ -1,5 +1,8 @@
 #! /bin/bash
 
-date=$(date)
+start_time=$(date +%s)
+sleep 10
+end_time=$(date +%s)
+Total_time=$($end_time-$start_time)
 
-echo "$date"
+echo "script execution time: $Total_time seconds"
