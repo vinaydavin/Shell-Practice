@@ -1,5 +1,5 @@
 #! /bin/bash
-person1=vinay
-person2=gowri
+person1=davin
+person2=susan
 echo "hi $person1"
 echo "hello $person2"
