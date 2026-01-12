@@ -23,7 +23,7 @@ validate(){
 dnf list installed $2
 if [ $? -ne 0 ]; then
     dnf install $2 -y
-    validate $? "net-tools"
+    validate $? "curl"
 else
     echo -e "${green}net-tools is already installed.${reset}"
 fi
