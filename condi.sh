@@ -1,17 +1,23 @@
 #! /bin/bash
-
 userid=$(id -u)
+
+red="\e[31m"
+green="\e[32m"
+yellow="\e[33m"
+reset="\e[0m"
+
+echo "zero"
 if [ $userid -ne 0 ]; then
-  echo "You must be root to run this script."
+  echo -e "${yellow}You must be root to run this script. ${reset}"
   exit 1
 fi
 
 validate(){
   if [ $1 -ne 0 ]; then
-    echo "$2 installation failed."
+    echo -e "${red}$2 installation failed. ${reset}"
     exit 1
   else
-    echo "$2 installed successfully."
+    echo -e"${green}$2 installed successfully.${reset}"
   fi
 }
 dnf install net-toolsss -y
@@ -22,3 +28,4 @@ validate $? "wget"
 
 dnf install curl -y
 validate $? "curl"
+
