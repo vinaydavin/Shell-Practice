@@ -1,7 +1,6 @@
 #! /bin/bash
-read a
-if [ $(($a % 2)) -eq 0 ]; then  
-    echo "Even"
-else
-    echo "Odd"
+
+userid=$(id -u)
+if [ $userid -ne 0 ]; then
+  echo "You must be root to run this script."
 fi
