@@ -20,7 +20,7 @@ validate(){
     echo -e"${green}$2 installed successfully.${reset}"
   fi
 }
-dnf install net-toolsss -y
+dnf install net-tools -y
 validate $? "net-tools"
 
 dnf install wget -y
