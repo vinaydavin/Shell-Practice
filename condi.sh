@@ -20,5 +20,5 @@ validate $? "net-tools"
 dnf install wget -y
 validate $? "wget"
 
-validate $? "curl"
 dnf install curl -y
+validate $? "curl"
