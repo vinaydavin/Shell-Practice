@@ -17,15 +17,23 @@ validate(){
     echo -e "$2 installation ${red} failed. ${reset}"
     exit 1
   else
-    echo -e"${green}$2 installed successfully.${reset}"
+    echo -e "${green}$2 installed successfully.${reset}"
   fi
 }
-dnf install net-tools -y
-validate $? "net-tools"
 
-dnf install wget -y
-validate $? "wget"
+dnf list installed net-tools
+if [ $? -ne 0 ]; then
+    dnf install net-tools -y
+    validate $? "net-tools"
+else
+    echo -e "${green}net-tools is already installed.${reset}"
+fi
 
-dnf install curl -y
-validate $? "curl"
+dnf list installed wget
+if [ $? -ne 0 ]; then
+    dnf install wget -y
+    validate $? "wget"
+else
+    echo -e "${green}net-tools is already installed.${reset}"
+fi
 
