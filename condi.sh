@@ -14,7 +14,7 @@ fi
 
 validate(){
   if [ $1 -ne 0 ]; then
-    echo -e "${red}$2 installation failed. ${reset}"
+    echo -e "$2 installation ${red} failed. ${reset}"
     exit 1
   else
     echo -e"${green}$2 installed successfully.${reset}"
