@@ -6,7 +6,6 @@ green="\e[32m"
 yellow="\e[33m"
 reset="\e[0m"
 
-echo "zero"
 if [ $userid -ne 0 ]; then
   echo -e "${yellow}You must be root to run this script. ${reset}"
   exit 1
@@ -21,19 +20,19 @@ validate(){
   fi
 }
 
-dnf list installed net-tools
+dnf list installed $2
 if [ $? -ne 0 ]; then
-    dnf install net-tools -y
+    dnf install $2 -y
     validate $? "net-tools"
 else
     echo -e "${green}net-tools is already installed.${reset}"
 fi
 
-dnf list installed wget
+dnf list installed $2
 if [ $? -ne 0 ]; then
-    dnf install wget -y
+    dnf install $ -y
     validate $? "wget"
 else
-    echo -e "${green}net-tools is already installed.${reset}"
+    echo -e "${green}wget is already installed.${reset}"
 fi
 
