@@ -10,7 +10,6 @@ dnf install net-tools -y
 
 if [ $? -ne 0 ]; then
   echo "MySQL installation failed."
-  exit 1
 else
   echo "MySQL installed successfully."
 fi
