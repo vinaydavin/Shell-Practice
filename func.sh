@@ -45,3 +45,8 @@ if [ $? -ne 0 ]; then
 else
     echo -e "${green}wget already installed.${reset}" | tee -a ${log_file}
 fi
+
+for package in $@
+do
+    echo "Processing package: $package"
+done
