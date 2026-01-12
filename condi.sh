@@ -29,9 +29,9 @@ validate(){
   fi
 }
 
-dnf list installed net-tools &>>$log_file
+dnf list installed net-tools &>> $log_file
 if [ $? -ne 0 ]; then
-    dnf install net-tools -y &>>$log_file
+    dnf install net-tools -y &>> $log_file
     validate $? "net-tools"
 else
     echo -e "${green}net-tools is already installed.${reset}" | tee -a $log_file
